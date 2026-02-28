@@ -309,16 +309,17 @@ end
 -- CLI and Environment parsing
 -- ============================================================================
 
+-- stylua: ignore
 H.flag_handlers = {
-  ["font"] = function(v, opts) opts.font = v end,
-  ["font-size"] = function(v, opts) opts.font_size = tonumber(v) end,
-  ["key-normalization"] = function(v, opts) opts.key_normalization = v .. "_normalization" end,
-  ["inactivity-timer-ms"] = function(v, opts) opts.inactivity_timer_ms = tonumber(v) end,
-  ["max-keys-onscreen"] = function(v, opts) opts.max_keys_onscreen = tonumber(v) end,
-  ["margin-left"] = function(v, opts) opts.margin_left = tonumber(v) end,
-  ["margin-right"] = function(v, opts) opts.margin_right = tonumber(v) end,
-  ["margin-vertical"] = function(v, opts) opts.margin_vertical = tonumber(v) end,
-  ["highlight-color"] = function(v, opts)
+  ["font"]                = function(v, opts) opts.font=v end,
+  ["font-size"]           = function(v, opts) opts.font_size=tonumber(v) end,
+  ["key-normalization"]   = function(v, opts) opts.key_normalization=v .. "_normalization" end,
+  ["inactivity-timer-ms"] = function(v, opts) opts.inactivity_timer_ms=tonumber(v) end,
+  ["max-keys-onscreen"]   = function(v, opts) opts.max_keys_onscreen=tonumber(v) end,
+  ["margin-left"]         = function(v, opts) opts.margin_left=tonumber(v) end,
+  ["margin-right"]        = function(v, opts) opts.margin_right=tonumber(v) end,
+  ["margin-vertical"]     = function(v, opts) opts.margin_vertical=tonumber(v) end,
+  ["highlight-color"]     = function(v, opts)
     -- expect RRGGBB
     assert(#v == 6 and v:match("^[0-9A-Fa-f]+$"), "highlight-color must be RRGGBB")
     -- convert RGB to ASS BGR
